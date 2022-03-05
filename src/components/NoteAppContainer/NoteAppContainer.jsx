@@ -75,7 +75,6 @@ export function NoteAppContainer() {
                 setOtherNotes={setOtherNotes}
                 pinnedNotes={pinnedNotes}
                 setPinnedNotes={setPinnedNotes}
-                newNoteObj={newNoteObj}
                 addToPinned={addToPinned}
             />
         </div>

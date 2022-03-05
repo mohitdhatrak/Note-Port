@@ -72,3 +72,24 @@
 .collapsed:hover .btnContainer {
     visibility: visible;
 }
+
+.button {
+    background-color: transparent;
+    border: none;
+    border-radius: 50%;
+    padding: 0.2rem;
+    color: brown;
+
+    /* flex-properties */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button:hover {
+    background-color: lightgrey;
+}
+
+.colors {
+    color: #000;
+}

@@ -49,8 +49,26 @@ export function NoteInput({
                         />
                         <span className={input.btnContainer}>
                             <span className={input.leftContainer}>
-                                <button>Colors</button>
-                                <button>Delete</button>
+                                {/* <button
+                                    className={`${input.button} ${input.colors}`}
+                                >
+                                    <span class="material-icons-outlined">
+                                        palette
+                                    </span>
+                                </button> */}
+                                <button
+                                    onClick={() => {
+                                        setInputFocus(!inputFocus);
+                                        setTitle("");
+                                        setText("");
+                                        setNotePinned(false);
+                                    }}
+                                    className={input.button}
+                                >
+                                    <i class="material-icons-outlined">
+                                        delete
+                                    </i>
+                                </button>
                             </span>
                             <button
                                 onClick={(e) => {
@@ -68,6 +86,7 @@ export function NoteInput({
                                     setText("");
                                     setNotePinned(false);
                                 }}
+                                className={`${input.button} ${input.close}`}
                             >
                                 Close
                             </button>

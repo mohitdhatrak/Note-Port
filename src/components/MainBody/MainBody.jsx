@@ -1,7 +1,7 @@
 import React from "react";
 import main from "./MainBody.module.css";
 import { NoteInput } from "../NoteInput/NoteInput.jsx";
-import { OtherNotes } from "../NotesDisplay/NotesDisplay.jsx";
+import { NotesDisplay } from "../NotesDisplay/NotesDisplay.jsx";
 
 export function MainBody({
     inputFocus,
@@ -16,11 +16,10 @@ export function MainBody({
     setOtherNotes,
     pinnedNotes,
     setPinnedNotes,
-    newNoteObj,
     addToPinned,
 }) {
     const notesDisplayComponent = (eachNote) => (
-        <OtherNotes
+        <NotesDisplay
             key={eachNote.id}
             eachNote={eachNote}
             otherNotes={otherNotes}

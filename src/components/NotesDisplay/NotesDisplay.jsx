@@ -1,7 +1,7 @@
 import React from "react";
 import card from "./NotesDisplay.module.css";
 
-export function OtherNotes({
+export function NotesDisplay({
     eachNote,
     otherNotes,
     setOtherNotes,
@@ -30,6 +30,19 @@ export function OtherNotes({
         }
     }
 
+    function deleteCard() {
+        const eachNoteCopy = { ...eachNote };
+        const otherNotesCopy = [...otherNotes];
+        const pinnedNotesCopy = [...pinnedNotes];
+        if (eachNoteCopy.isPinned) {
+            pinnedNotesCopy.splice(positionInPinned(), 1);
+            setPinnedNotes(pinnedNotesCopy);
+        } else {
+            otherNotesCopy.splice(positionInOther(), 1);
+            setOtherNotes(otherNotesCopy);
+        }
+    }
+
     const isPinned = () =>
         eachNote.isPinned ? (
             <span className="material-icons">push_pin</span>
@@ -45,8 +58,12 @@ export function OtherNotes({
             <h3 className={card.title}>{eachNote.title}</h3>
             <p className={card.text}>{eachNote.text}</p>
             <span className={card.btnContainer}>
-                <button>Colors</button>
-                <button>Delete</button>
+                {/* <button className={`${card.button} ${card.colors}`}>
+                    <span class="material-icons-outlined">palette</span>
+                </button> */}
+                <button onClick={deleteCard} className={card.button}>
+                    <i class="material-icons-outlined">delete</i>
+                </button>
             </span>
         </div>
     );
