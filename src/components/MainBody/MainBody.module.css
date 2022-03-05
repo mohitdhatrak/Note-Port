@@ -1,0 +1,13 @@
+.cardsContainer {
+    padding: 1rem 2rem;
+
+    /* grid properties */
+    display: grid;
+    grid-row: auto;
+    grid-gap: 2em;
+    grid-template-columns: repeat(auto-fit, 20rem);
+}
+
+.sectionHeading {
+    margin-left: 2rem;
+}
