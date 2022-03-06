@@ -52,7 +52,7 @@ export function NoteInput({
                                 {/* <button
                                     className={`${input.button} ${input.colors}`}
                                 >
-                                    <span class="material-icons-outlined">
+                                    <span className="material-icons-outlined">
                                         palette
                                     </span>
                                 </button> */}
@@ -65,7 +65,7 @@ export function NoteInput({
                                     }}
                                     className={input.button}
                                 >
-                                    <i class="material-icons-outlined">
+                                    <i className="material-icons-outlined">
                                         delete
                                     </i>
                                 </button>

@@ -59,10 +59,10 @@ export function NotesDisplay({
             <p className={card.text}>{eachNote.text}</p>
             <span className={card.btnContainer}>
                 {/* <button className={`${card.button} ${card.colors}`}>
-                    <span class="material-icons-outlined">palette</span>
+                    <span className="material-icons-outlined">palette</span>
                 </button> */}
                 <button onClick={deleteCard} className={card.button}>
-                    <i class="material-icons-outlined">delete</i>
+                    <i className="material-icons-outlined">delete</i>
                 </button>
             </span>
         </div>

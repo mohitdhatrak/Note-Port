@@ -1,5 +1,4 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import container from "./NoteAppContainer.module.css";
 import { HeaderBar } from "../HeaderBar/HeaderBar.jsx";
 import { MainBody } from "../MainBody/MainBody.jsx";

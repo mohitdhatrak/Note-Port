@@ -10,12 +10,12 @@ export function HeaderBar() {
                 <span className={header.title}>Note Port</span>
             </a>
             <a
-                href="https://mohitdhatrak.bio.link/"
+                href="https://github.com/mohitdhatrak/Note-Port"
                 target="_blank"
                 rel="noreferrer"
                 className={header.link}
             >
-                <span>Socials</span>
+                <span>GitHub</span>
                 <i className={`material-icons ${header.icon}`}>public</i>
             </a>
         </nav>

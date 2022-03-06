@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import main from "./MainBody.module.css";
 import { NoteInput } from "../NoteInput/NoteInput.jsx";
 import { NotesDisplay } from "../NotesDisplay/NotesDisplay.jsx";
@@ -18,6 +18,16 @@ export function MainBody({
     setPinnedNotes,
     addToPinned,
 }) {
+    useEffect(() => {
+        setOtherNotes(JSON.parse(localStorage.getItem("otherNotes")));
+        setPinnedNotes(JSON.parse(localStorage.getItem("pinnedNotes")));
+    }, []);
+
+    useEffect(() => {
+        localStorage.setItem("otherNotes", JSON.stringify(otherNotes));
+        localStorage.setItem("pinnedNotes", JSON.stringify(pinnedNotes));
+    }, [otherNotes, pinnedNotes]);
+
     const notesDisplayComponent = (eachNote) => (
         <NotesDisplay
             key={eachNote.id}
