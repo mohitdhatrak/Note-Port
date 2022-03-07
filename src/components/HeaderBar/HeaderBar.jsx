@@ -5,7 +5,7 @@ import header from "./HeaderBar.module.css";
 export function HeaderBar() {
     return (
         <nav aria-label="Header" className={header.container}>
-            <a href="/index.html" className={header.link}>
+            <a href="/" className={header.link}>
                 <img src={logo} alt="Website Logo" className={header.logo} />
                 <span className={header.title}>Note Port</span>
             </a>
