@@ -21,7 +21,7 @@ export function MainBody({
     useEffect(() => {
         setOtherNotes(JSON.parse(localStorage.getItem("otherNotes")));
         setPinnedNotes(JSON.parse(localStorage.getItem("pinnedNotes")));
-    }, []);
+    }, [setOtherNotes, setPinnedNotes]);
 
     useEffect(() => {
         localStorage.setItem("otherNotes", JSON.stringify(otherNotes));
