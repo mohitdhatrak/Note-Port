@@ -1,5 +1,8 @@
 # Note Port
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/4b61228d-4dc9-45da-bba1-ec7a37f9b2b1/deploy-status)](https://app.netlify.com/sites/noteport/deploys)
+
+### About:
 [Note Port](https://noteport.netlify.app/) is a frontend clone of Google Keep. It uses localstorage to save your notes!
 
 ### Tech Stack
