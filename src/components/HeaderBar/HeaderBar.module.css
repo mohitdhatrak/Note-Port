@@ -67,8 +67,8 @@
 
     .icon {
         display: block !important;
-        font-size: 1.5em !important;
-        color: #3b82f6;
+        width: 2rem;
+        border-radius: 50%;
     }
 
     .logo {

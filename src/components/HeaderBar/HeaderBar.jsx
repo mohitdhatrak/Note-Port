@@ -16,7 +16,12 @@ export function HeaderBar() {
                 className={header.link}
             >
                 <span>GitHub</span>
-                <i className={`material-icons ${header.icon}`}>public</i>
+                <img
+                    src="https://api.iconify.design/mdi:github.svg?color=currentColor"
+                    // src="https://api.iconify.design/ri:github-line.svg?color=currentColor"
+                    alt="GitHub"
+                    className={header.icon}
+                />
             </a>
         </nav>
     );
