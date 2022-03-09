@@ -91,7 +91,7 @@ export function NoteInput() {
                                 }}
                                 className={`${input.button} ${input.close}`}
                             >
-                                Close
+                                Add note
                             </button>
                         </span>
                     </div>
