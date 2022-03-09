@@ -96,3 +96,10 @@
 .colors {
     color: #000;
 }
+
+@media screen and (max-width: 430px) {
+    .pin,
+    .btnContainer {
+        visibility: visible;
+    }
+}
