@@ -1,18 +1,21 @@
 import React from "react";
 import input from "./NoteInput.module.css";
+import { useApp } from "../../context-providers/app-context";
 
-export function NoteInput({
-    inputFocus,
-    setInputFocus,
-    notePinned,
-    setNotePinned,
-    title,
-    setTitle,
-    text,
-    setText,
-    addToPinned,
-}) {
-    const isPinned = () =>
+export function NoteInput() {
+    const {
+        inputFocus,
+        setInputFocus,
+        notePinned,
+        setNotePinned,
+        title,
+        setTitle,
+        text,
+        setText,
+        addToPinned,
+    } = useApp();
+
+    const isPinnedIcon = () =>
         notePinned ? (
             <span className="material-icons">push_pin</span>
         ) : (
@@ -31,7 +34,7 @@ export function NoteInput({
                             onClick={() => setNotePinned(!notePinned)}
                             className={input.pin}
                         >
-                            {isPinned()}
+                            {isPinnedIcon()}
                         </button>
                         <textarea
                             type="text"

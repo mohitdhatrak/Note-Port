@@ -43,8 +43,12 @@
     gap: 0.8em;
 }
 
+.link:nth-child(2) {
+    padding: 0em;
+}
+
 .link:nth-child(2):hover {
-    background-color: var(--link-hover-color);
+    text-decoration: underline;
     border-radius: var(--link-hover-border-radius);
 }
 

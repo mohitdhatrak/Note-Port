@@ -1,13 +1,10 @@
 import React from "react";
 import card from "./NotesDisplay.module.css";
+import { useApp } from "../../context-providers/app-context";
 
-export function NotesDisplay({
-    eachNote,
-    otherNotes,
-    setOtherNotes,
-    pinnedNotes,
-    setPinnedNotes,
-}) {
+export function NotesDisplay({ eachNote }) {
+    const { otherNotes, setOtherNotes, pinnedNotes, setPinnedNotes } = useApp();
+
     const positionInOther = () =>
         otherNotes.findIndex((obj) => obj.id === eachNote.id);
 

@@ -1,18 +1,47 @@
 import React from "react";
-import { NoteAppContainer } from "./components/NoteAppContainer/NoteAppContainer.jsx";
-
-export function App() {
-    return <NoteAppContainer />;
-}
+import container from "./App.module.css";
+import { HeaderBar } from "./components/HeaderBar/HeaderBar.jsx";
+import { MainBody } from "./components/MainBody/MainBody.jsx";
+import { useApp } from "./context-providers/app-context.js";
 
 /* App structure
-        <NoteAppContainer>
+        <App>
             <HeaderBar />
+            <SideBar /> --- later
             <MainBody>
                 <NoteInput />
                 <NotesDisplay />
             </MainBody>
-        </NoteAppContainer> 
+        </App> 
 */
-// For file names we use hyphen and lowercase
-// For components only we use Pascal/camel notation
+
+export function App() {
+    const {
+        inputFocus,
+        setInputFocus,
+        setNotePinned,
+        title,
+        setTitle,
+        text,
+        setText,
+        addToPinned,
+    } = useApp();
+
+    return (
+        <div
+            className={container.body}
+            onClick={() => {
+                if (!(title.trim() === "" && text.trim() === "")) {
+                    addToPinned();
+                }
+                setTitle("");
+                setText("");
+                setNotePinned(false);
+                return inputFocus ? setInputFocus(false) : "";
+            }}
+        >
+            <HeaderBar />
+            <MainBody />
+        </div>
+    );
+}

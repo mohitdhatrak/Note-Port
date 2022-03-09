@@ -2,22 +2,11 @@ import React, { useEffect } from "react";
 import main from "./MainBody.module.css";
 import { NoteInput } from "../NoteInput/NoteInput.jsx";
 import { NotesDisplay } from "../NotesDisplay/NotesDisplay.jsx";
+import { useApp } from "../../context-providers/app-context";
 
-export function MainBody({
-    inputFocus,
-    setInputFocus,
-    notePinned,
-    setNotePinned,
-    title,
-    setTitle,
-    text,
-    setText,
-    otherNotes,
-    setOtherNotes,
-    pinnedNotes,
-    setPinnedNotes,
-    addToPinned,
-}) {
+export function MainBody() {
+    const { otherNotes, setOtherNotes, pinnedNotes, setPinnedNotes } = useApp();
+
     useEffect(() => {
         setOtherNotes(JSON.parse(localStorage.getItem("otherNotes")));
         setPinnedNotes(JSON.parse(localStorage.getItem("pinnedNotes")));
@@ -29,14 +18,7 @@ export function MainBody({
     }, [otherNotes, pinnedNotes]);
 
     const notesDisplayComponent = (eachNote) => (
-        <NotesDisplay
-            key={eachNote.id}
-            eachNote={eachNote}
-            otherNotes={otherNotes}
-            setOtherNotes={setOtherNotes}
-            pinnedNotes={pinnedNotes}
-            setPinnedNotes={setPinnedNotes}
-        />
+        <NotesDisplay key={eachNote.id} eachNote={eachNote} />
     );
 
     const isAnythingPinned = () =>
@@ -62,17 +44,7 @@ export function MainBody({
 
     return (
         <>
-            <NoteInput
-                inputFocus={inputFocus}
-                setInputFocus={setInputFocus}
-                notePinned={notePinned}
-                setNotePinned={setNotePinned}
-                title={title}
-                setTitle={setTitle}
-                text={text}
-                setText={setText}
-                addToPinned={addToPinned}
-            />
+            <NoteInput />
             {pinnedNotes.length === 0 ? (
                 <div className={main.cardsContainer}>
                     {otherNotes.map(notesDisplayComponent)}
